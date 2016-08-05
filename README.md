@@ -10,4 +10,19 @@ mvn package
 ```
 
 ## Running the app
-The app is built as a fat JAR, meaning that contains all the `.class` files which are needed to run the application.
+The app is built as a fat JAR, meaning that it contains all the `.class` files which are needed to run the application.
+```bash
+#run the following in your terminal to run the app
+java -jar target/dropwizard-demo-1.0-SNAPSHOT.jar server hello-world.yml
+```
+
+This will start a service which listens on port 8080 for incoming requests.
+
+## API endpoints
+
+GET     /hello-world - responds with "Hello world"
+GET     /hello-world?name="Enter your name" - responds with "Hello, <your name>".
+
+## Admin port
+
+In addition to port 8080, the service listens on port 8081 which is the admin port. This provides access to different health metrics.
