@@ -21,8 +21,8 @@ This will start a service which listens on port 8080 for incoming requests.
 ## API endpoints
 
 * `GET     /hello-world` - responds with "Hello world"
-* `GET     /hello-world?name="Enter your name"` - responds with "Hello, <your name>".
+* `GET     /hello-world?name="Enter your name"` - responds with "Hello, your name".
 
 ## Admin port
 
-In addition to port 8080, the service listens on port 8081 which is the admin port. This provides access to different health metrics.
+In addition to port 8080, the service listens on port 8081 which is the admin port. This provides access to different health metrics. For more information visit the [user manual for Dropwizard](http://www.dropwizard.io/1.0.0/docs/manual/index.html).
