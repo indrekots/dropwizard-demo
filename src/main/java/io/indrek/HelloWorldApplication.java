@@ -3,6 +3,7 @@ package io.indrek;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.indrek.resources.HelloWorldResource;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
@@ -21,8 +22,12 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     }
 
     @Override
-    public void run(HelloWorldConfiguration helloWorldConfiguration,
+    public void run(HelloWorldConfiguration configuration,
                     Environment environment) throws Exception {
-
+        final HelloWorldResource resource = new HelloWorldResource(
+                configuration.getTemplate(),
+                configuration.getDefaultName()
+        );
+        environment.jersey().register(resource);
     }
 }
